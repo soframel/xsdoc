@@ -1,0 +1,39 @@
+@import com.sun.xml.xsom._
+
+
+@(userId: String, sset: List[Schema])
+
+@import play.api.cache.Cache
+@import helper._
+@import scala.collection.JavaConversions._
+@import play.api.Play.current
+@import play.api.Logger
+@import scala.collection.Map
+@import models._
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>XSDoc</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/jquery.js")" type="text/javascript"></script>
+				<script src="@routes.Assets.at("javascripts/jquery.cookie.js")" type="text/javascript"></script>	
+				<script src="@routes.Assets.at("javascripts/jquery.dcjqaccordion.2.7.min.js")" type="text/javascript"></script>
+    </head>
+    <body>
+				@menu(userId, sset)
+				
+			<div class="content">
+					Welcome to the XSDoc website. 
+					Here are the schemas uploaded: 
+					<ul>
+					@for(schema <- sset){	
+						<li>@schema.name</li>
+					}		
+					</ul>	
+			</div>
+
+    </body>
+</html>

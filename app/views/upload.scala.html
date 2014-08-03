@@ -1,0 +1,27 @@
+@()
+
+@import helper._
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>XSDoc</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+    </head>
+    <body>
+        <p>Welcome to XSDoc: a XMLSchema documentation page</p>
+
+				<p>
+				Upload XMLSchema to analyze: 
+				@form(action = routes.Application.xsdUpload, 'enctype -> "multipart/form-data") {
+    
+			    <input type="file" name="xsd">
+    
+    <p>
+        <input type="submit">
+    </p>
+}
+			</p>
+    </body>
+</html>

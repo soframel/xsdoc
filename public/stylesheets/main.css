@@ -1,0 +1,57 @@
+body{	background-color: #FFFFE3;}
+
+#schemaNav{
+	position: absolute;
+	padding: 5px;	
+	left: 0px;
+	right: auto;
+	top: 0px;
+	bottom: 0px;
+	z-index: 0;
+	width: 250px;
+	display: block;
+	visibility: visible;
+	overflow: scroll;
+}
+
+
+.content{
+	position: absolute;
+	padding: 10px;
+	margin: 5px;
+	left: 250px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+	z-index: 0;
+	display: block;
+	visibility: visible;
+	overflow: scroll;
+	text-align: left;
+}
+
+/** Accordion Menu **/
+
+.accordion div,.accordion blockquote,.accordion img,.accordion label,.accordion p,.accordion h1,.accordion h2,.accordion h3,.accordion h4,.accordion h5,.accordion h6,.accordion pre,.accordion ul,.accordion ol,.accordion li,.accordion dl,.accordion dt,.accordion dd,.accordion form,.accordion a,.accordion fieldset,.accordion input,.accordion th,.accordion td{border:0;outline:none;margin:0;padding:0;}
+.accordion {border:0;outline:none;margin:0;padding:0;}
+.accordion ul, .accordion ul li{list-style: none;}
+.accordion ul.text {margin-bottom: 1em; line-height: 1.5em;}
+.accordion .text-center {text-align: center;}
+.accordion h2 {font: normal 26px Arial, sans-serif; padding: 20px 0; margin: 0 0 30px 0;}
+.accordion .wrap {width: 960px; margin: 0 auto;}
+.accordion .clear {clear: both;}
+.dcjq-count {float: right;}
+
+#schemaNav .accordion{ border-top: 1px solid #013d6c; border-right: 1px solid #013d6c; border-left: 1px solid #013d6c;}
+#schemaNav .accordion, #schemaNav .accordion li {margin: 0; padding: 0; border: none;}
+#schemaNav .accordion a {padding: 10px 10px 10px 15px; text-decoration:none; display: block; color: #fff; border-bottom: 1px solid #013d6c; border-top: 1px solid #4695d3;}
+#schemaNav .accordion ul a {padding: 10px 10px 10px 25px;}
+#schemaNav .accordion a.dcjq-parent, #schemaNav .accordion a.dcjq-parent:hover {padding: 10px 10px 10px 15px;}
+/*#schemaNav .accordion a.dcjq-parent.active {background: #0D5995 url(images/checkers.png) repeat 0 0;}*/
+#schemaNav .accordion a:hover {background: #05477c;}
+#schemaNav .accordion a:active{}
+
+.schemaTitle{ background: #2B5700; }
+.elementsTitle{ background: #428500; }
+.typesTitle{ background: #428500; }
+.component{ background: #65C900; }
