@@ -1,4 +1,4 @@
-This is your new Play application
+XSDoc - XMLSchema doc generator
 =================================
 
-This file will be packaged with your application, when using `activator dist`.
+This project is for now more of a test of Play framework / scala than anything else...
