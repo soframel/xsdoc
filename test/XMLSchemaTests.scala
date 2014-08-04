@@ -7,6 +7,7 @@ import controllers.XMLSchemas
 import play.api.Logger
 import play.api.test.FakeApplication
 import play.api.test.WithApplication
+import controllers.Application
 
 @RunWith(classOf[JUnitRunner])
 class XMLSchemaTests extends FunSuite{
@@ -25,9 +26,9 @@ class XMLSchemaTests extends FunSuite{
     
  	//check map
     val elementDecl=testSchema.getElementDecls().values().iterator().next()
-    val elementId=XMLSchemas.getIdForComponent(map, elementDecl)
+    val elementId=Application.getIdForComponent(map, elementDecl)
     Logger.debug("id for elementDecl="+elementId)
-    val comp=XMLSchemas.getComponentForId(map, elementId)
+    val comp=Application.getComponentForId(map, elementId)
     Logger.debug("comp for id = "+comp)
     assert(comp===elementDecl)
     }
