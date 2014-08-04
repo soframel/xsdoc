@@ -27,6 +27,7 @@ import play.api.Play.current
 import java.io.InputStream
 import models.CompsWithIDs
 import java.io.FileInputStream
+import com.sun.xml.xsom.XSParticle
 
 object XMLSchemas {
 
@@ -39,7 +40,7 @@ object XMLSchemas {
    def loadSchema(is: InputStream): (XSSchemaSet, CompsWithIDs) = {
 		val parser = new XSOMParser()
 		parser.setErrorHandler(new MyErrorHandler())
-		val annFact=new DomAnnotationParserFactory()
+		val annFact=new DomAnnotationParserFactory()		
 		parser.setAnnotationParser(annFact)
 		parser.parse(is)
 		
@@ -54,7 +55,7 @@ object XMLSchemas {
    
     def getSubComponents(comp: XSComponent): Collection[XSComponent]={
      comp match{
-       case t: XSComplexType => t.getContentType().asParticle().getTerm().asModelGroup().getChildren().toList
+       case t: XSComplexType => t.getContentType().asParticle().getTerm().asModelGroup().getChildren().toList.map((p: XSParticle) => p.getTerm())
        case s: XSSchema => s.getComplexTypes().values()++s.getSimpleTypes().values()++s.getElementDecls().values()++s.getAttGroupDecls().values()++s.getAttributeDecls().values()++s.getModelGroupDecls().values()
        case c: XSAttContainer => c.getAttGroups()++c.getAttributeUses()    
        case e: XSElementDecl => { 

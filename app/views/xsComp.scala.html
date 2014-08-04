@@ -37,8 +37,8 @@
 				@comp match{
 						case d: XSDeclaration => {
 							
-							@if(d.isAnonymous()){
-								Anonymous @comp.getClass().getName()
+							@if(d.isLocal()){
+								Local @d.getName()
 							} else{
 								@d.getName()
 								}				
@@ -48,10 +48,41 @@
 			</h1>				
 
 			@if(comp.getAnnotation()!=null && comp.getAnnotation().getAnnotation()!=null){
-					<p><div class="label">Documentation: </div>@comp.getAnnotation().getAnnotation()</p>
+					<p><span class="label">Documentation: </span>@comp.getAnnotation().getAnnotation()</p>
 				} else{
 					@Logger.debug("comp has no annotation: "+comp.getAnnotation())
 				}
+				
+		
+			@comp match{
+						case t: XSComplexType => { 
+								<p><span class="label">min occurence: </span>@t.getContentType().asParticle().getMinOccurs</p>
+								<p><span class="label">max occurence: </span>@if(t.getContentType().asParticle().getMaxOccurs==XSParticle.UNBOUNDED) { Unbounded} else{ @t.getContentType().asParticle().getMaxOccurs}</p>
+						
+								@if(t.getContentType().asParticle().getTerm().asModelGroup().getCompositor==XSModelGroup.Compositor.ALL){
+									All of:
+								} 
+								@if(t.getContentType().asParticle().getTerm().asModelGroup().getCompositor==XSModelGroup.Compositor.CHOICE){
+									Choice of: 
+								} 
+								@if(t.getContentType().asParticle().getTerm().asModelGroup().getCompositor==XSModelGroup.Compositor.SEQUENCE){
+									Sequence of: 
+								}
+						
+								<ul>
+								@for(child <- t.getContentType().asParticle().getTerm().asModelGroup().getChildren()){
+									<li>
+										<a href="@routes.Application.xsComp(controllers.Application.getIdForComponent(child.getTerm, userId))">@child.getTerm [@child.getMinOccurs, @child.getMaxOccurs]</a>
+									</li>
+								}
+								
+								
+								</ul>
+						}
+						case s: XSSimpleType => { //TODO }
+						case e: XSElementDecl => { //TODO }
+				}
+			
 			</div>
 
     </body>
