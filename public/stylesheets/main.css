@@ -1,4 +1,17 @@
-body{	background-color: #FFFFE3;}
+body{	background-color: #DED5D8;}
+
+.title, .title a, .title a:visited{
+	color: #57001D;
+	font-style: oblique;
+	font-family: fantasy;
+	text-align: center;
+	font-size: xx-large;
+	margin: 10px;
+}
+
+.centered{
+	text-align: center;
+}
 
 #schemaNav{
 	position: absolute;
@@ -32,7 +45,7 @@ body{	background-color: #FFFFE3;}
 
 /** Accordion Menu **/
 
-.accordion div,.accordion blockquote,.accordion img,.accordion label,.accordion p,.accordion h1,.accordion h2,.accordion h3,.accordion h4,.accordion h5,.accordion h6,.accordion pre,.accordion ul,.accordion ol,.accordion li,.accordion dl,.accordion dt,.accordion dd,.accordion form,.accordion a,.accordion fieldset,.accordion input,.accordion th,.accordion td{border:0;outline:none;margin:0;padding:0;}
+.accordion div,.accordion blockquote,.accordion img,.accordion label,.accordion p,.accordion h1,.accordion h2,.accordion h3,.accordion h4,.accordion h5,.accordion h6,.accordion pre,.accordion ul,.accordion li ,.accordion ol,.accordion dl,.accordion dt,.accordion dd,.accordion form,.accordion a,.accordion fieldset,.accordion input,.accordion th,.accordion td{border:0;outline:none;margin:0;padding:0;}
 .accordion {border:0;outline:none;margin:0;padding:0;}
 .accordion ul, .accordion ul li{list-style: none;}
 .accordion ul.text {margin-bottom: 1em; line-height: 1.5em;}
@@ -43,7 +56,7 @@ body{	background-color: #FFFFE3;}
 .dcjq-count {float: right;}
 
 #schemaNav .accordion{ border-top: 1px solid #013d6c; border-right: 1px solid #013d6c; border-left: 1px solid #013d6c;}
-#schemaNav .accordion, #schemaNav .accordion li {margin: 0; padding: 0; border: none;}
+#schemaNav .accordion, #schemaNav .accordion li {margin: 0; padding: 0; border: none; padding-left: 5px; list-style: none;}
 #schemaNav .accordion a {padding: 10px 10px 10px 15px; text-decoration:none; display: block; color: #fff; border-bottom: 1px solid #013d6c; border-top: 1px solid #4695d3;}
 #schemaNav .accordion ul a {padding: 10px 10px 10px 25px;}
 #schemaNav .accordion a.dcjq-parent, #schemaNav .accordion a.dcjq-parent:hover {padding: 10px 10px 10px 15px;}
@@ -51,7 +64,9 @@ body{	background-color: #FFFFE3;}
 #schemaNav .accordion a:hover {background: #05477c;}
 #schemaNav .accordion a:active{}
 
-.schemaTitle{ background: #2B5700; }
-.elementsTitle{ background: #428500; }
-.typesTitle{ background: #428500; }
-.component{ background: #65C900; }
+.schemaTitle{ background: #57001D; }
+.elementsTitle{ background: #7D002A; }
+.typesTitle{ background: #7D002A; } 
+.component{ background: #A30036; }
+
+/* previous colors:  #2B5700 #428500 #65C900*/
